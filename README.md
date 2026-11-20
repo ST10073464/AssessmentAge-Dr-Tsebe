@@ -35,6 +35,29 @@ This folder is a reconstruction of the Assessment Age homepage based on an Octob
 
 The site is plain HTML, CSS and JavaScript. It has no package installation or build step. The calculator runs in the browser, and its date values are not sent to a server.
 
+## Update this site from VS Code and push to GitHub
+
+The local folder is connected to `https://github.com/ST10073464/AssessmentAge-Dr-Tsebe.git` on the `main` branch. Use this cycle for each update:
+
+1. Open this repository folder in VS Code. In the Source Control view, confirm the current branch is `main`.
+2. Before editing, select **… > Pull** in Source Control to get the latest GitHub changes. If Git reports a conflict, resolve it before continuing.
+3. Edit and save the files. Preview the site using the local server instructions above.
+4. Open Source Control and review the changed files and diff. Stage only the changes you want to include using the **+** beside each file, or stage all reviewed changes.
+5. Enter a short commit message that describes the change, such as `Improve mobile calculator layout`, then select **Commit**.
+6. Select **… > Push** (or **Sync Changes** if VS Code offers it) and wait for the push to finish. Refresh the GitHub repository page to confirm the commit appears on `main`.
+
+You can do the same in VS Code's integrated PowerShell terminal:
+
+```powershell
+git pull --rebase origin main
+git status
+git add index.html styles.css script.js
+git commit -m "Describe the update"
+git push origin main
+```
+
+Replace the example file list with the files you changed. Use `git add .` only after reviewing `git status` so you do not include unrelated files. A GitHub push updates the source repository; it does not publish this static site to a host. Hosting and automatic deployment remain unconfigured until approved.
+
 ## Contact form test
 
 The static contact form uses FormSubmit.co to forward messages to `assessmentage@gmail.com` and send an automatic acknowledgement to the visitor. FormSubmit is a third-party service; it is not an Azure service. Its current free service requires no registration, and it says submissions are retained for 30 days. The form only asks for an email address and message. Do not include client identities, dates of birth, test results, or confidential assessment information.
