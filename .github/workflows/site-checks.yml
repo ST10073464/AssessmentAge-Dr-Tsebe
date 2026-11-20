@@ -1,0 +1,33 @@
+name: Static site checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate website files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check required pages and assets
+        run: |
+          test -f index.html
+          test -f contact.html
+          test -f contact-thanks.html
+          test -f styles.css
+          test -f script.js
+
+      - name: Check JavaScript syntax
+        run: node --check script.js
+
+      - name: Check sitemap XML syntax
+        run: python3 -c "import xml.etree.ElementTree as ET; ET.parse('sitemap.xml')"
