@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | Assessment Age</title>
+<meta name="description" content="Contact Assessment Age with a question or feedback about the chronological age calculator.">
+<meta name="robots" content="noindex,follow"><meta name="theme-color" content="#102d38">
+<link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><nav><a class="brand" href="index.html">Assessment <span>Age</span></a><div class="navlinks"><a href="index.html">Calculator</a><a href="index.html#how-it-works">How it works</a><a href="index.html#faq">FAQs</a></div></nav></header>
+<main class="main contact-main"><div class="wrap"><section class="panel contact-panel" aria-labelledby="contact-title">
+<p class="eyebrow">Get in touch</p><h1 id="contact-title">Contact us</h1>
+<p class="muted">Send a question or feedback about the calculator. Please do not include client names, dates of birth, test results, or other confidential assessment information.</p>
+<form class="contact-form" action="https://formsubmit.co/assessmentage@gmail.com" method="POST">
+  <input type="hidden" name="_subject" value="Assessment Age website contact">
+  <input type="hidden" name="_autoresponse" value="Thank you for contacting Assessment Age. We have received your message and will respond when possible. Please do not reply with confidential client or assessment information.">
+  <input type="hidden" name="_next" id="formReturn" value="contact-thanks.html">
+  <div class="honeypot" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+  <div class="form-field"><label for="email">Your email address</label><input id="email" type="email" name="email" autocomplete="email" maxlength="254" required placeholder="you@example.com"></div>
+  <div class="form-field"><label for="message">Your message</label><textarea id="message" name="message" rows="7" maxlength="2000" required placeholder="How can we help?"></textarea><small>Maximum 2,000 characters. Do not include confidential information.</small></div>
+  <button class="primary" type="submit">Send message</button>
+</form>
+<p class="notice">Your email and message are sent to our email provider so we can receive and reply to you. The first test submission may ask us to verify the receiving address. See <a href="index.html#privacy">Privacy and responsible use</a>.</p>
+</section></div></main>
+<footer><p>© <span id="year"></span> Assessment Age · <a href="index.html">Calculator</a></p></footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('formReturn').value = new URL('contact-thanks.html', window.location.href).href;
+</script>
+</body></html>
